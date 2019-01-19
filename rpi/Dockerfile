@@ -2,8 +2,9 @@ ARG NODE_VERSION=8
 FROM arm32v7/node
 
 # add support for gpio library
-RUN apt-get update
-RUN apt-get install -y python-rpi.gpio
+RUN apt-get update && \
+    sudo apt-get dist-upgrade
+RUN apt-get install python-rpi.gpio
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
