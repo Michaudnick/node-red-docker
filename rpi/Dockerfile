@@ -3,8 +3,9 @@ FROM arm32v7/node
 
 # add support for gpio library
 RUN apt-get update && \
-    apt-get dist-upgrade -y
-RUN pip install RPi.GPIO
+    apt-get dist-upgrade -y && \
+    apt-get install python -y
+    pip install RPi.GPIO
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
