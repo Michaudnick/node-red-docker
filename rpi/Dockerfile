@@ -1,6 +1,6 @@
 FROM arm32v7/node
 
-RUN apt-get update && \
+RUN apt-get update
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
